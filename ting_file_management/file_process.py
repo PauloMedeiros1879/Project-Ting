@@ -8,15 +8,15 @@ def process(path_file, instance):
         if instance.search(index)["nome_do_arquivo"] == path_file:
             return None
     archive = txt_importer(path_file)  # Dados do arquivo
-    data = {
+    data_file = {
             "nome_do_arquivo": path_file,
             "qtd_linhas": len(archive),
             "linhas_do_arquivo": (archive),
         }
 
-    instance.enqueue(data)
-    sys.stdout.write(str(data))
-    return data
+    instance.enqueue(data_file)
+    sys.stdout.write(str(data_file))
+    return data_file
 
 
 def remove(instance):
@@ -31,3 +31,10 @@ def remove(instance):
 
 def file_metadata(instance, position):
     """Aqui irá sua implementação"""
+    try:
+        data_file = instance.search(position)
+        sys.stdout.write(str(data_file))
+        return str(data_file)
+
+    except IndexError:
+        sys.stderr.write("Posição inválida")
