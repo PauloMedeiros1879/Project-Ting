@@ -7,7 +7,6 @@ def process(path_file, instance):
     for index in range(len(instance)):
         if instance.search(index)["nome_do_arquivo"] == path_file:
             return None
-    
     archive = txt_importer(path_file)  # Dados do arquivo
     data = {
             "nome_do_arquivo": path_file,
