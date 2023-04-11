@@ -55,7 +55,8 @@ def search_by_word(word, instance):
 
         # Itera sobre cada linha do arquivo atual
         for line in file["linhas_do_arquivo"]:
-            # Se a palavra for encontrada na linha, adiciona a informação da linha na lista de ocorrências
+            # Se a palavra for encontrada na linha,
+            # adiciona a informação da linha na lista de ocorrências
             if word.lower() in line.lower():
                 amount += 1
                 file_info["ocorrencias"].append(
@@ -65,7 +66,8 @@ def search_by_word(word, instance):
                     }
                 )
 
-        # Se houver alguma ocorrência da palavra no arquivo atual, adiciona as informações do arquivo à lista de resultados da busca
+        # Se houver alguma ocorrência da palavra no arquivo atual,
+        # adiciona as informações do arquivo à lista de resultados da busca
         if len(file_info["ocorrencias"]) > 0:
             search_info.append(file_info)
 
